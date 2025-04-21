@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Handlers Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Click Event Handler
+        function showMessage() {
+            alert('Button was clicked!');
+        }
+
+        // Mouseover Event Handler
+        function changeColor() {
+            document.getElementById('hoverBox').style.backgroundColor = 'yellow';
+        }
+
+        function resetColor() {
+            document.getElementById('hoverBox').style.backgroundColor = 'lightblue';
+        }
+
+        // Focus and Blur Event Handlers
+        function onFocusHandler() {
+            document.getElementById('inputField').style.borderColor = 'green';
+        }
+
+        function onBlurHandler() {
+            document.getElementById('inputField').style.borderColor = 'red';
+        }
+
+        // Keydown Event Handler
+        function onKeydownHandler(event) {
+            alert("You pressed the key: " + event.key);
+        }
+
+        // Submit Event Handler
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+            alert('Form Submitted!');
+        }
+
+        // Resize Event Handler
+        function onResize() {
+            console.log('The window has been resized!');
+        }
+
+        // Scroll Event Handler
+        function onScroll() {
+            console.log('You are scrolling the page!');
+        }
+
+        window.onresize = onResize;
+        window.onscroll = onScroll;
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>JavaScript Event Handlers Demo</h1>
+
+    <!-- Click Event -->
+    <button onclick="showMessage()">Click Me</button>
+
+    <!-- Mouseover Event -->
+    <div id="hoverBox" onmouseover="changeColor()" onmouseout="resetColor()" class="hover-box">
+        Hover over me!
+    </div>
+
+    <!-- Focus and Blur Events -->
+    <input type="text" id="inputField" onfocus="onFocusHandler()" onblur="onBlurHandler()" placeholder="Click to focus">
+
+    <!-- Keydown Event -->
+    <input type="text" onkeydown="onKeydownHandler(event)" placeholder="Press a key">
+
+    <!-- Submit Event -->
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Enter your name" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>

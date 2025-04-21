@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Details</h2>
+        <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+        <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+        <p><strong>Organization:</strong> <span id="displayOrganization"></span></p>
+        <p><strong>Hobbies:</strong> <span id="displayHobbies"></span></p>
+    </div>
+
+    <script>
+        // Fetch the data from localStorage and display it
+        document.getElementById('displayFirstName').textContent = localStorage.getItem('firstName');
+        document.getElementById('displayLastName').textContent = localStorage.getItem('lastName');
+        document.getElementById('displayOrganization').textContent = localStorage.getItem('organization');
+        document.getElementById('displayHobbies').textContent = localStorage.getItem('hobbies');
+    </script>
+</body>
+</html>

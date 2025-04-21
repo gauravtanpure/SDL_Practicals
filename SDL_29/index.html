@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Form Validation</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, textarea { display: block; margin-bottom: 10px; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h2>User Registration</h2>
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Name">
+    <input type="password" id="password" placeholder="Password">
+    <input type="text" id="phone" placeholder="Phone (10 digits)">
+    <input type="email" id="email" placeholder="Email">
+    <textarea id="address" placeholder="Address"></textarea>
+    <button type="submit">Submit</button>
+    <p id="error" class="error"></p>
+  </form>
+
+  <script src="script.js"></script>
+    
+</body>
+</html>

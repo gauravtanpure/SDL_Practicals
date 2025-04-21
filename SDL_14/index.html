@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Fibonacci Series Generator</h1>
+    <p>Click the button below to generate the Fibonacci series up to a certain number of terms.</p>
+
+    <label for="terms">Enter number of terms:</label>
+    <input type="number" id="terms" placeholder="Enter number of terms" min="1" required>
+
+    <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    // Function to generate the Fibonacci series
+    function generateFibonacci() {
+        const numTerms = document.getElementById("terms").value;
+        let fibonacciSeries = [];
+        
+        if (numTerms <= 0 || isNaN(numTerms)) {
+            document.getElementById("result").innerHTML = "Please enter a valid number greater than 0.";
+            return;
+        }
+
+        let a = 0, b = 1;
+        
+        for (let i = 1; i <= numTerms; i++) {
+            fibonacciSeries.push(a);
+            let nextTerm = a + b;
+            a = b;
+            b = nextTerm;
+        }
+
+        // Display the Fibonacci series
+        document.getElementById("result").innerHTML = "Fibonacci Series: " + fibonacciSeries.join(", ");
+    }
+</script>
+
+</body>
+</html>

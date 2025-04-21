@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data.xslt"?>
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="data.xsd">
+    <student>
+        <id>101</id>
+        <name>Gaurav Tanpure</name>
+        <age>20</age>
+        <course>Computer Science</course>
+    </student>
+    <student>
+        <id>102</id>
+        <name>Sumedh Pimplikar</name>
+        <age>20</age>
+        <course>Data Science</course>
+    </student>
+</students>

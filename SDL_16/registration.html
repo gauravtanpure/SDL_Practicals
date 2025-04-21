@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+            
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+            
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" name="organization" required>
+            
+            <label for="hobbies">Hobbies (Comma separated)</label>
+            <textarea id="hobbies" name="hobbies" rows="4" required></textarea>
+            
+            <button type="submit">Register</button>
+        </form>
+        <p class="error" id="errorMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const organization = document.getElementById('organization').value;
+            const hobbies = document.getElementById('hobbies').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Clear previous error messages
+            errorMessage.textContent = '';
+
+            // Validation
+            if (!firstName || !lastName || !organization || !hobbies) {
+                errorMessage.textContent = 'All fields are required!';
+                return;
+            }
+
+            // Save the data in localStorage (this can be replaced with backend storage)
+            localStorage.setItem('firstName', firstName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('organization', organization);
+            localStorage.setItem('hobbies', hobbies);
+
+            // Redirect to display the details page
+            window.location.href = 'displayDetails.html';
+        });
+    </script>
+</body>
+</html>

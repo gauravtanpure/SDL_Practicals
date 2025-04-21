@@ -1,0 +1,13 @@
+On Linux (Ubuntu):
+Open Terminal.
+
+Install Ruby by running:
+
+sudo apt update
+sudo apt install ruby-full
+
+Verify the installation:
+
+ruby -v
+
+ruby reverse_name.rb
